@@ -40,5 +40,39 @@ final userRepositoryProvider = Provider<UserRepository>.internal(
 @Deprecated('Will be removed in 3.0. Use Ref instead')
 // ignore: unused_element
 typedef UserRepositoryRef = ProviderRef<UserRepository>;
+String _$userLoginServiceHash() => r'3b64f21b060001f1ea39249a947d41e285091f7c';
+
+/// See also [userLoginService].
+@ProviderFor(userLoginService)
+final userLoginServiceProvider = Provider<UserLoginService>.internal(
+  userLoginService,
+  name: r'userLoginServiceProvider',
+  debugGetCreateSourceHash:
+      const bool.fromEnvironment('dart.vm.product')
+          ? null
+          : _$userLoginServiceHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
+typedef UserLoginServiceRef = ProviderRef<UserLoginService>;
+String _$getMeHash() => r'754137d5d72ac0ed42f828fb1c86cc560ec99c15';
+
+/// See also [getMe].
+@ProviderFor(getMe)
+final getMeProvider = FutureProvider<UserModel>.internal(
+  getMe,
+  name: r'getMeProvider',
+  debugGetCreateSourceHash:
+      const bool.fromEnvironment('dart.vm.product') ? null : _$getMeHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
+typedef GetMeRef = FutureProviderRef<UserModel>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package
