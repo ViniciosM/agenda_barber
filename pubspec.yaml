@@ -1,0 +1,110 @@
+name: agenda_barber
+description: "A new Flutter project."
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.7.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  flutter_riverpod: any
+  riverpod_annotation: any
+
+  asyncstate: any
+  #loading_animation_widget: ^1.2.0+4
+  loading_animation_widget: 
+    git:
+      url: https://github.com/caneto/loading_animation_widget.git
+  shared_preferences: ^2.5.3
+  syncfusion_flutter_calendar: any
+  validatorless: any
+  top_snackbar_flutter: any
+  table_calendar: any
+  #table_calendar: 
+  #  git:
+  #    url: https://github.com/caneto/table_calendar.git
+  intl: any
+  dio: ^5.7.0
+  pretty_dio_logger: any
+
+dependency_overrides:
+  intl: 0.18.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^5.0.0
+  custom_lint: any
+  riverpod_lint: any
+  riverpod_generator: any
+  build_runner: any
+
+
+flutter:
+
+
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+  
+  fonts:
+    - family: dw_barbershop_icons
+      fonts:
+        - asset: assets/fonts/dw_barbershop_icons.ttf
+    
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins/Poppins-Italic.ttf
+          style: italic
+        - asset: assets/fonts/Poppins/Poppins-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Poppins/Poppins-Black.ttf
+          weight: 900
+        - asset: assets/fonts/Poppins/Poppins-BlackItalic.ttf
+          weight: 900
+          style: italic
+        - asset: assets/fonts/Poppins/Poppins-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Poppins/Poppins-BoldItalic.ttf
+          weight: 700
+          style: italic
+        - asset: assets/fonts/Poppins/Poppins-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/Poppins/Poppins-ExtraBoldItalic.ttf
+          weight: 800
+          style: italic
+        - asset: assets/fonts/Poppins/Poppins-ExtraLight.ttf
+          weight: 200
+        - asset: assets/fonts/Poppins/Poppins-ExtraLightItalic.ttf
+          weight: 200
+          style: italic
+        - asset: assets/fonts/Poppins/Poppins-Light.ttf
+          weight: 200
+        - asset: assets/fonts/Poppins/Poppins-LightItalic.ttf
+          weight: 200
+          style: italic
+        - asset: assets/fonts/Poppins/Poppins-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Poppins/Poppins-MediumItalic.ttf
+          weight: 500
+          style: italic
+        - asset: assets/fonts/Poppins/Poppins-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Poppins/Poppins-SemiBoldItalic.ttf
+          weight: 600
+          style: italic
+        - asset: assets/fonts/Poppins/Poppins-Thin.ttf
+          weight: 100
+        - asset: assets/fonts/Poppins/Poppins-ThinItalic.ttf
+          weight: 100
+          style: italic
