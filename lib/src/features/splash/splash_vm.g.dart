@@ -1,25 +1,25 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'login_vm.dart';
+part of 'splash_vm.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$loginVMHash() => r'3db01bfe1f1cceefbf2e8358100bb974dd69603c';
+String _$splashVMHash() => r'9724f31e026724f03d4f6add0af40650e107d011';
 
-/// See also [LoginVM].
-@ProviderFor(LoginVM)
-final loginVMProvider =
-    AutoDisposeNotifierProvider<LoginVM, LoginState>.internal(
-      LoginVM.new,
-      name: r'loginVMProvider',
+/// See also [SplashVM].
+@ProviderFor(SplashVM)
+final splashVMProvider =
+    AutoDisposeAsyncNotifierProvider<SplashVM, SplashState>.internal(
+      SplashVM.new,
+      name: r'splashVMProvider',
       debugGetCreateSourceHash:
-          const bool.fromEnvironment('dart.vm.product') ? null : _$loginVMHash,
+          const bool.fromEnvironment('dart.vm.product') ? null : _$splashVMHash,
       dependencies: null,
       allTransitiveDependencies: null,
     );
 
-typedef _$LoginVM = AutoDisposeNotifier<LoginState>;
+typedef _$SplashVM = AutoDisposeAsyncNotifier<SplashState>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

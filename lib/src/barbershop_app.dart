@@ -1,6 +1,8 @@
+import 'package:agenda_barber/src/core/ui/barbershop_nav_global_key.dart';
 import 'package:agenda_barber/src/core/ui/barbershop_theme.dart';
 import 'package:agenda_barber/src/core/ui/widgets/barber_loader.dart';
 import 'package:agenda_barber/src/features/auth/login/login_page.dart';
+import 'package:agenda_barber/src/features/barbershop/barbershop_register_page.dart';
 import 'package:agenda_barber/src/features/splash/splash_page.dart';
 import 'package:asyncstate/asyncstate.dart';
 import 'package:flutter/material.dart';
@@ -14,6 +16,7 @@ class BarbershopApp extends StatelessWidget {
       customLoader: BarberLoader(),
       builder: (asyncNavigatorObserver) {
         return MaterialApp(
+          navigatorKey: BarbershopNavGlobalKey.instance.navKey,
           debugShowCheckedModeBanner: false,
           theme: BarbershopTheme.themeData,
           navigatorObservers: [asyncNavigatorObserver],
@@ -21,6 +24,8 @@ class BarbershopApp extends StatelessWidget {
           routes: {
             '/': (_) => const SplashPage(),
             '/auth/login': (_) => const LoginPage(),
+            '/auth/register/user': (_) => const BarbershopRegisterPage(),
+            '/auth/register/barbershop': (_) => const BarbershopRegisterPage(),
             '/home/adm': (_) => const Text('ADM'),
             '/home/employee': (_) => const Text('Employee'),
           },
