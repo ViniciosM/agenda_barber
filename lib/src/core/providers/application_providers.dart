@@ -1,5 +1,6 @@
 import 'package:agenda_barber/src/core/fp/either.dart';
 import 'package:agenda_barber/src/core/restClient/rest_client.dart';
+import 'package:agenda_barber/src/core/ui/barbershop_nav_global_key.dart';
 import 'package:agenda_barber/src/model/barbershop_model.dart';
 import 'package:agenda_barber/src/model/user_model.dart';
 import 'package:agenda_barber/src/repositories/barbershop/barbershop_repository.dart';
@@ -8,8 +9,10 @@ import 'package:agenda_barber/src/repositories/user/user_repository.dart';
 import 'package:agenda_barber/src/repositories/user/user_repository_impl.dart';
 import 'package:agenda_barber/src/services/users_login/user_login_service.dart';
 import 'package:agenda_barber/src/services/users_login/user_login_service_impl.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 part 'application_providers.g.dart';
 
@@ -50,4 +53,17 @@ Future<BarbershopModel> getMyBarbershop(Ref ref) async {
     Success(value: final barbershop) => barbershop,
     Failure(:final exception) => throw exception,
   };
+}
+
+@riverpod
+Future<void> logout(Ref ref) async {
+  final sp = await SharedPreferences.getInstance();
+  sp.clear();
+
+  ref.invalidate(getMeProvider);
+  ref.invalidate(getMyBarbershopProvider);
+
+  Navigator.of(
+    BarbershopNavGlobalKey.instance.navKey.currentContext!,
+  ).pushNamedAndRemoveUntil('/auth/login', (route) => false);
 }
