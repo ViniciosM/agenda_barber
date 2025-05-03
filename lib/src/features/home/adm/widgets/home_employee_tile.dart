@@ -1,10 +1,12 @@
 import 'package:agenda_barber/src/core/ui/barbershop_icons.dart';
 import 'package:agenda_barber/src/core/ui/constants.dart';
+import 'package:agenda_barber/src/model/user_model.dart';
 import 'package:flutter/material.dart';
 
 class HomeEmployeeTile extends StatelessWidget {
-  const HomeEmployeeTile({super.key});
-  final imageNetwork = false;
+  final UserModel employee;
+  const HomeEmployeeTile({super.key, required this.employee});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -24,9 +26,9 @@ class HomeEmployeeTile extends StatelessWidget {
             decoration: BoxDecoration(
               image: DecorationImage(
                 image:
-                    switch (imageNetwork) {
-                          true => const NetworkImage('url'),
-                          false => const AssetImage(ImageConstants.avatar),
+                    switch (employee.avatar) {
+                          final avatar? => NetworkImage(avatar),
+                          _ => const AssetImage(ImageConstants.avatar),
                         }
                         as ImageProvider,
               ),
@@ -39,7 +41,7 @@ class HomeEmployeeTile extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Nome e sobrenome',
+                  employee.name,
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
                 ),
                 Row(

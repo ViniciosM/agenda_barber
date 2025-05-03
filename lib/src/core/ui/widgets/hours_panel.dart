@@ -2,6 +2,7 @@ import 'package:agenda_barber/src/core/ui/constants.dart';
 import 'package:flutter/material.dart';
 
 class HoursPanel extends StatelessWidget {
+  final List<int>? enabledTimes;
   final int startTime;
   final int endTime;
   final ValueChanged<int> onHourPressed;
@@ -11,6 +12,7 @@ class HoursPanel extends StatelessWidget {
     required this.startTime,
     required this.endTime,
     required this.onHourPressed,
+    this.enabledTimes,
   });
 
   @override
@@ -30,6 +32,7 @@ class HoursPanel extends StatelessWidget {
           children: [
             for (int i = startTime; i <= endTime; i++)
               TimeButton(
+                enabledTimes: enabledTimes,
                 label: '${i.toString().padLeft(2, '0')}:00',
                 value: i,
                 onHourPressed: onHourPressed,
@@ -42,6 +45,7 @@ class HoursPanel extends StatelessWidget {
 }
 
 class TimeButton extends StatefulWidget {
+  final List<int>? enabledTimes;
   final String label;
   final int value;
   final ValueChanged<int> onHourPressed;
@@ -51,6 +55,7 @@ class TimeButton extends StatefulWidget {
     required this.label,
     required this.onHourPressed,
     required this.value,
+    this.enabledTimes,
   });
 
   @override
@@ -67,14 +72,25 @@ class _TimeButtonState extends State<TimeButton> {
     final buttonBorderColor =
         selected ? ColorsConstants.brow : ColorsConstants.grey;
 
+    final TimeButton(:value, :label, :enabledTimes, :onHourPressed) = widget;
+
+    final disableTime = enabledTimes != null && !enabledTimes.contains(value);
+
+    if (disableTime) {
+      buttonColor = Colors.grey[400]!;
+    }
+
     return InkWell(
       borderRadius: BorderRadius.circular(8),
-      onTap: () {
-        setState(() {
-          selected = !selected;
-          widget.onHourPressed(widget.value);
-        });
-      },
+      onTap:
+          disableTime
+              ? null
+              : () {
+                setState(() {
+                  selected = !selected;
+                  onHourPressed(widget.value);
+                });
+              },
       child: Container(
         width: 64,
         height: 36,

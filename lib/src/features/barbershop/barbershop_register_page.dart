@@ -79,6 +79,7 @@ class _BarbershopRegisterPageState
                 ),
                 const SizedBox(height: 24),
                 WeekdaysPanel(
+                  enabledDays: ['Seg', 'Ter'],
                   onDayPressed: (value) {
                     barbershopRegisterVM.addOrRemoveOpenDay(weekDay: value);
                   },
