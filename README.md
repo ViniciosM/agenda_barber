@@ -1,16 +1,32 @@
-# agenda_barber
+# Agenda Barber
 
-A new Flutter project.
+  **Agenda Barber** é um app para gerenciar os agendamentos do cliente, possuindo módulo para Administrador e Colaborador.
 
-## Getting Started
+## ✨ Feito com
 
-This project is a starting point for a Flutter application.
+- [Flutter](https://flutter.dev/) — framework para desenvolvimento multiplataforma
+- [Dart](https://dart.dev/) — linguagem de programação principal
 
-A few resources to get you started if this is your first Flutter project:
+## 🏗️ Arquitetura
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+O projeto segue uma arquitetura baseada em **MVVM**, com separação clara de responsabilidades:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- `models/` — define as classes de dados (DTOs, entidades)
+- `viewmodels/` — gerenciamento de estado com Riverpod
+- `repositories/` — responsáveis por comunicação com APIs e lógica de negócio
+- `services/` — responsáveis por comunicação com APIs e lógica de negócio e auth
+- `pages/` — telas e componentes de UI
+- `ui/` — componentes reutilizáveis de interface
+
+
+---
+
+## 📦 Pacotes utilizados
+
+- [`riverpod`](https://pub.dev/packages/riverpod) — gerenciamento de estado
+- [`dio`](https://pub.dev/packages/dio) — requisições HTTP
+- [`syncfusion_flutter_calendar`](https://pub.dev/packages/sync_fusion_calendar) — timeline calendário
+- [`shared_preferences`](https://pub.dev/packages/shared_preferences) — armazenamento local para tokens
+- [`intl`](https://pub.dev/packages/intl) — internacionalização e formatação de datas/números
+
+
