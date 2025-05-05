@@ -13,6 +13,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  
 
   cupertino_icons: ^1.0.8
   flutter_riverpod: any
@@ -24,14 +25,14 @@ dependencies:
     git:
       url: https://github.com/caneto/loading_animation_widget.git
   shared_preferences: ^2.5.3
-  syncfusion_flutter_calendar: any
+  syncfusion_flutter_calendar: ^29.1.40
   validatorless: any
   top_snackbar_flutter: any
-  table_calendar: any
+  table_calendar: ^3.2.0
   #table_calendar: 
   #  git:
   #    url: https://github.com/caneto/table_calendar.git
-  intl: any
+  intl: ^0.20.2
   dio: ^5.7.0
   pretty_dio_logger: any
 

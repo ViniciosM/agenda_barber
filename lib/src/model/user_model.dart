@@ -55,8 +55,8 @@ class UserModelADM extends UserModel {
 
 class UserModelEmployee extends UserModel {
   final int barbershopId;
-  final List<String>? workDays;
-  final List<int>? workHours;
+  final List<String> workDays;
+  final List<int> workHours;
 
   UserModelEmployee({
     required super.id,
