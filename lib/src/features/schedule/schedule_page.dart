@@ -74,7 +74,7 @@ class _SchedulePageState extends ConsumerState<SchedulePage> {
               child: Column(
                 children: [
                   const SizedBox(height: 24),
-                  const AvatarWidget(hideUploadButton: true),
+                  const AvatarWidget(),
                   const SizedBox(height: 24),
                   Text(
                     userModel.name,

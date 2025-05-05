@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 
 class AvatarWidget extends StatelessWidget {
   final bool hideUploadButton;
-  const AvatarWidget({super.key, this.hideUploadButton = false});
+  const AvatarWidget({super.key}) : hideUploadButton = false;
+  const AvatarWidget.withoutButton({super.key}) : hideUploadButton = true;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +25,7 @@ class AvatarWidget extends StatelessWidget {
             bottom: 2,
             right: 2,
             child: Offstage(
-              offstage: !hideUploadButton,
+              offstage: hideUploadButton,
               child: Container(
                 decoration: BoxDecoration(
                   color: Colors.white,
